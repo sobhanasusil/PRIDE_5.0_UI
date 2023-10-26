@@ -1,0 +1,99 @@
+    /**
+ *
+ * Version Control Block
+ * Project name: Sample_Wizad_of_PRIDE 5.0
+ * Version: 0.1V
+ * Revised on:20-Oct-2023
+ *
+ * IMPORTANT NOTICE:
+ *
+ * If you are not authorized, Do not modify the content of this file.
+ * Any unauthorized use or reproduction of this code is strictly prohibited.
+ *
+ * For inquiries or permissions, please contact the original author(s)
+ * Developer(s): S. Sobhana susil <aashiksusil@planystech.com>
+ * 
+ */
+    #completion {
+       width:50%;
+       height:20%;
+       margin: auto;
+       display: block;
+     }
+
+     @keyframes hideshow {
+       0% { opacity: 0.2; }
+       10% { opacity: 0.2; }
+       15% { opacity: 0.2; }
+       100% { opacity: 1; }
+     } 
+
+     #cirkel { 
+       animation: hideshow 0.4s ease;
+     }
+
+     #check {
+       animation: hideshow 0.4s ease;
+     }
+
+     #stars {
+       animation: hideshow 1.0s ease;
+       opacity: 0.9;   
+     }
+
+
+     @keyframes hideshow {
+       0% {
+         transform: scale(0.2);
+         transform-origin: initial;
+
+       }
+       100% {
+         transform: scale(1.0);
+         transform-origin: initial;
+       }
+     }
+
+     @keyframes draaien {
+       0% {
+         transform: rotate(40deg);
+         transform-origin: initial;
+
+       }
+       100% {
+         transform: scale(0deg);
+         transform-origin: initial;
+       }
+     }
+
+     #check {
+       animation: draaien 0.8s ease;
+     }
+
+
+     @keyframes transparant {
+       0% {
+         opacity: 0;
+
+       }
+       100% {
+         opacity: 1;
+       }
+     }
+
+     #check {
+       animation: transparant 2s ;
+     }
+     .st0{fill:#6a9d19;fill-opacity:0.4;} .st1{fill:#59a013;fill-opacity:0.1;} .st2{fill:#6bd112;}
+     h1{
+     text-align: center;
+      margin-top: 48px;
+     /* background-color: green; */
+     color: green;
+     }
+     .sucess-div{
+        display: block;
+        margin-left: 21%;
+        width: 1100px;
+        margin-top: 31px;
+     }
