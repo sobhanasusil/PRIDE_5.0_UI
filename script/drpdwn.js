@@ -100,3 +100,13 @@ $('.dropdown-menu li').click(function () {
       }
     });
   
+
+    function toggleDiv() {
+      var div = document.getElementById('hiddenDiv');
+      div.style.display = div.style.display === 'none' ? 'block' : 'none';
+    }
+
+    var profileData = [
+      { name: "susil", Designation: "developer", email: "aashi.com" }
+    ];
+    

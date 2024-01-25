@@ -1,0 +1,24 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <circle id="svg_2" r="32" fill="#E0995E" cy="32" cx="32"/>
+  <path opacity="0.2" id="svg_6" fill="#231F20" d="m36,23l0,-9l-17,0c-1.657,0 -3,1.343 -3,3l0,34c0,1.657 1.343,3 3,3l26,0c1.657,0 3,-1.343 3,-3l0,-25l-9,0c-1.657,0 -3,-1.343 -3,-3z"/>
+  <path id="svg_8" fill="#E0E0D1" d="m36,21l0,-9l-17,0c-1.657,0 -3,1.343 -3,3l0,34c0,1.657 1.343,3 3,3l26,0c1.657,0 3,-1.343 3,-3l0,-25l-9,0c-1.657,0 -3,-1.343 -3,-3z"/>
+  <polygon opacity="0.2" id="svg_10" points="37.016,23.294 48,33 48,24     " fill="#231F20"/>
+  <path id="svg_12" fill="#FFFFFF" d="m36,12l0,9c0,1.657 1.343,3 3,3l9,0l-12,-12z"/>
+  <rect opacity="0.2" id="svg_14" y="22" x="22" width="9.625" height="2" fill="#231F20"/>
+  <rect opacity="0.2" id="svg_16" y="32" x="22" width="20" height="2" fill="#231F20"/>
+  <rect opacity="0.2" id="svg_18" y="27" x="22" width="20" height="2" fill="#231F20"/>
+  <rect opacity="0.2" id="svg_20" y="37" x="22" width="20" height="2" fill="#231F20"/>
+  <rect opacity="0.2" id="svg_22" y="42" x="22" width="20" height="2" fill="#231F20"/>
+  <line stroke="null" stroke-linecap="null" stroke-linejoin="null" id="svg_27" y2="19.116684" x2="14.799492" y1="14.111246" x1="14.799492" stroke-opacity="null" stroke-width="NaN" fill="none"/>
+  <line opacity="0" stroke-dasharray="5,5" stroke-linecap="null" stroke-linejoin="null" id="svg_28" y2="34.684736" x2="31.726977" y1="29.315265" x1="11" stroke-opacity="null" stroke-width="NaN" stroke="null" fill="none"/>
+  <rect stroke="null" rx="1" id="svg_29" height="5.096447" width="13.924221" y="14.475277" x="18.16679" stroke-opacity="null" fill="#e0995e"/>
+  <text font-weight="bold" stroke="null" transform="matrix(0.17632240627325138,0,0,0.15256450978891287,52.590922209814735,19.949653812576855) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_26" y="-10.432257" x="-191.61336" stroke-opacity="null" stroke-width="0" fill="#8c4c10">.tar.gz</text>
+ </g>
+</svg>
