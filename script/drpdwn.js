@@ -110,3 +110,42 @@ $('.dropdown-menu li').click(function () {
       { name: "susil", Designation: "developer", email: "aashi.com" }
     ];
     
+
+    function showAlert(message, alertType) {
+      // Create a new alert element
+      var alertElement = document.createElement('div');
+      alertElement.className = 'alert alert-' + alertType;
+      alertElement.innerHTML = message;
+      alertElement.style.width = '50rem';
+      alertElement.style.float = 'right';
+      // Append the alert to the body
+      document.body.appendChild(alertElement);
+
+      // Automatically close the alert after 5 seconds (adjust as needed)
+      setTimeout(function() {
+        alertElement.style.display = 'none';
+      }, 3000);
+    }
+
+
+// Function to show the spinner
+function showSpinner() {
+  console.log('Showing spinner');
+  document.getElementById('spinner').style.display = 'block';
+}
+
+// Function to hide the spinner
+function hideSpinner() {
+  console.log('Hiding spinner');
+  document.getElementById('spinner').style.display = 'none';
+}
+
+// Event listener for when the DOM content is loaded
+window.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM content loaded');
+  // Show the spinner
+  showSpinner();
+  
+  // Hide the spinner after 3 seconds
+  setTimeout(hideSpinner, 3000);
+});

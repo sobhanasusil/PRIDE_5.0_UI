@@ -1,0 +1,524 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Bathymetry Automation Tool Documentation
+
+  body
+    h1 Bathymetry Automation Tool Documentation
+
+    h2 Repository Details
+    table
+      thead
+        tr
+          th S.No.
+          th File/Folder
+          th Description
+      tbody
+        tr
+          td 1
+          td Resources
+          td This folder stores templates for the 2D and 3D plotly js files; These are used to generate the actual plotly 2D and 3D files while running the Bathymetry tool.
+        tr
+          td 2
+          td Utilities
+          td This folder contains the utility functions written in Python, to generate the js files.
+        tr
+          td 3
+          td main.py
+          td This is the main Python file that performs the following steps: i) check if all the .xyz files are present in the correct location, ii) read and filter the .xyz files, iii) write the points to the 2D and 3D plotly js files.
+        tr
+          td 4
+          td requirements.txt
+          td This text file contains the list of library dependencies and their versions
+
+    h2 What is this repository for?
+    p Generation of 2D and 3D plotly.js files, given the .xyz files and the automation excel file as inputs.
+    p Mandatory step to generate a Bathymetry Report using SRG/PRIDE-5.0.
+
+    h2 Pre-requisites
+    p The requirements.txt file contains the necessary libraries to be installed to run this tool. The following command can be used for installation:
+      code $ pip install -r requirements.txt
+
+    h2 Bathymetry File Generation
+    p You have a primary directory with two main subdirectories: "Input" and "Output." Within the "Input" directory, establish two additional subdirectories at the same hierarchical level as "bathymetry_automation" (assuming "bathymetry_automation" is either a folder or file within the "Input" directory). These two subdirectories are named:
+    ul
+      li Resources
+      li Output
+    p Inside the "Resources" folder, include the following:
+    ul
+      li A file titled "Automation_template.xlsx" containing a sheet named "bathymetry."
+      li A subfolder named "Bathymetry."
+    p Inside the "Bathymetry" subfolder, create another subfolder named "xyz_files."
+    p Inside the "xyz_files" subfolder, place ".xyz" files.
+
+    h3 Steps to Fill Automation_Template.Xlsx
+    ul
+      li no_of_xyz_files (Column A): Enter the number of files in this column.
+      li Pier_name (Column B): Specify the corresponding pier name in this column.
+      li Image_file_name (Column C): Provide the corresponding image file name in this column.
+      li js_file_name (Column D): Enter the corresponding JS file name in this column.
+      li Description (Column E): Add a description of the report in this column.
+
+    p The folder structure should look as shown below:
+
+    img(src="../assets/image/Screenshot from 2024-01-29 15-15-09.png")
+     
+    h2 Bathymetry Tool Usage
+    p The Bathymetry tool takes input from the 'Resources' folder to generate the 2D and 3D plotly js files, and writes them to the 'Output' folder.
+
+    h3 To Run the Tool
+    p To run the Bathymetry tool, execute the following command:
+
+    code python main.py
+
+    p After running this tool, you should see the plotly 2D and 3D js files created in the Output folder.
+
+    h2 Steps to Generate Report using Bathymetry data
+    h3 Structure your data as shown below:
+
+    h4 Steps to Fill Automation_Template.Xlsx
+    ul
+      li Landing_Page:
+        ul
+          li Title (Column A): Enter the actual title of the project.
+          li Start_date (Column B): Fill up this field with the project's actual start date.
+          li End_date (Column B): Fill up this field with the project's actual end date.
+          li Location (Column D): Specify the project location in this column
+          li Image_file_name (Column E): Provide the image file name in this column.
+          li Report_file_name (Column F): Insert the report file name in this column.
+          li How_to_file_name (Column G): Fill in this column with the how-to file name.
+      li bathymetry
+        ul
+          li no_of_xyz_files (Column A): Enter the number of files in this column.
+          li Pier_name (Column B): Specify the corresponding pier name in this column.
+          li Image_file_name (Column C): Provide the corresponding image file name in this column.
+          li js_file_name (Column D): Enter the corresponding JS file name in this column.
+          li Description (Column E): Add a description of the report in this column.
+
+      li Common Path:
+        ul
+          li Common_Folder_Path (Column A): Fill this column with https://dashboard.planystech.com/temporary/Common/
+
+    h4 Steps to Fill Bathymetry
+    ul
+      li Place 2D.js and 3D.js Files: Place the 2.js and 3d.js files inside the bathymetry folder.
+      li Place Bathymetry Image File: In the Contours folder, place the bathymetry image file.
+      li Finally, compress the Resources folder in .zip format and upload this in PRIDE-5.0 to generate a Bathymetry report.
+
+    h2 Steps to be Followed while Generating Bathymetry PAD using PRIDE 5.0
+    ol
+      li Choose File - Start by choosing the file named "Resource.zip."
+      li Upload - Upload the selected file into PRIDE 5.0.
+      li Clear CSV - After a successful upload, clear the CSV data to remove any unwanted CSV files from the resource folder.
+      li Convert Excel to CSV file - Once the CSV data is cleared, convert Excel files to CSV format.
+      li Export Support files - After converting Excel files, Export the necessary support files.
+      li Generate JSON - After exporting the files, generate a JSON file.
+      li Validate CSV Data - After JSON generation is completed, Validate the CSV data and resize the images if needed.
+      li Generate.js and CSS - Validate the CSV data, then generate the js and CSS files after completing the generation process.
+      li Generate Bathymetry - Click on the Generate Bathymetry tab, it will generate the 2D & 3D plots.
+      li Generate Page - Generate the landing page and a main page following the successful generation of the bathymetry plot.
+      li Preview Pages - After generating the pages, preview them to confirm that the bathymetry plots have been generated accurately.
+
+// ... (Remaining code)
+
+
+h2 Steps to Generate Report with UT data
+p To generate a Planys Assessment Dashboard Report with UT data using PRIDE-5.0, structure your data as shown below:
+
+h4 Steps to Fill Automation_Template.Xlsx
+ul
+  li Landing_Page:
+    ul
+      li Title (Column A): Enter the actual title of the project.
+      li Start_date (Column B): Fill up this field with the project's actual start date.
+      li End_date (Column B): Fill up this field with the project's actual end date.
+      li Location (Column D): Specify the project location in this column
+      li Image_file_name (Column E): Provide the image file name in this column.
+      li Report_file_name (Column F): Insert the report file name in this column.
+      li How_to_file_name (Column G): Fill in this column with the how-to file name.
+  li Section_page
+    ul
+      li No_of_sections (Column A): Enter the number of sections in this column.
+      li Section_name (Column B): Populate this field with the name of each section.
+      li Image_file_name (Column C): Specify the image file name in this column.
+      li Block (Column D): Fill this column with the name of the block.
+  li d_Section_page
+    ul
+      li No_of_sections (Column A): Enter the number of sections in this column.
+      li Section_name (Column B): Populate this field with the name of each section.
+      li Image_file_name (Column C): Specify the image file name in this column.
+      li Block (Column D): Fill this column with the name of the block.
+  li inspection_map_page_1
+    ul
+      li Image_file_name (Column A): Provide the name of the inspection map image file in this column.
+      li Section_name (Column B): Populate this field with the name of each respective section.
+      li Block_name (Column C): Fill this column with the name of the block.
+      li No_of_rows (Column D): Enter the number of rows in this column.
+      li No_of_columns (Column E): Specify the number of columns in this column.
+      li Description (Column G): Populate this column with relevant descriptions.
+      li Color_of_marker (Column H): Indicate the color of the marker in this column.
+      li Video_ID (Column I): Input the video ID in this column.
+      li Marker_no (Column J): Enter the marker numbers in this column.
+
+h4 Steps to Fill UT_Automation_Template.Xlsx
+ul
+  li Defect_ID (Column A): A unique identifier for each reported defect within the system.
+  li Name (Column B): The designation of the defect or issue being reported.
+  li Location (Column C): The specific section or area within the system where the defect is detected.
+  li axis_name (Column D): The label identifying the axis associated with the defect.
+  li min_values (Column E): The lowest permissible values linked to the defect.
+  li max_values (Column F): The highest permissible values linked to the defect.
+  li resolution (Column G): The level of detail or precision pertaining to the defect.
+  li line_name (Column H): The label identifying the line associated with the defect.
+  li line_value (Column I): The value attributed to the defect on the specified line.
+  li line_color (Column J): The color representation of the defect on the line.
+  li Status_Start_coloum (Column K): The initial column for recording the status of the defect.
+  li Status_No_of_rows (Column L): The count of rows allocated for status-related information.
+  li Status_No_of_columns (Column M): The count of columns allocated for status-related information.
+  li Status_Name (Column N): The name indicating the status of the defect.
+  li Status_Value (Column O): The descriptive value corresponding to the status of the defect.
+  li No_Tables (Column P): The quantity of tables associated with the defect.
+  li Table_Name (Column Q): The name of the table pertaining to the defect.
+  li Colors (Column R): Colors used for representation or visualization of the defect.
+  li Legend (Column S): The key or legend explaining the colors and their respective meanings.
+  li Table_Start_coloum (Column T): The starting column for the defect-related table.
+  li Table_No_of_rows (Column U): The number of rows in the table relevant to the defect.
+  li Table_No_of_columns (Column V): The number of columns in the table relevant to the defect.
+  li Reading_1 (Column W): Placeholder for specific readings or data associated with the defect.
+
+h2 Steps to be Followed while Generating PAD in PRIDE 5.0
+ol
+  li Choose File - Start by choosing the file named "Resource.zip."
+  li Upload - Upload the selected file into PRIDE 5.0.
+  li Clear CSV - After a successful upload, clear the CSV data to remove any unwanted CSV files from the resource.
+  li Convert Excel to CSV file - Once the CSV data is cleared, convert Excel files to CSV format.
+  li Export Support files - After converting excel files, Export necessary support files.
+  li Add UT - After exporting necessary support files, Add UT.
+  li Generate JSON - After exporting the files, generate a JSON file.
+  li Validate CSV Data - After JSON is completed, Validate the CSV data and resize images if needed.
+  li Generate.js and CSS - Validate the CSV data, then create the "Generate.js" and CSS files after completing the generation process.
+  li Generate Page - Create a landing page and a main page following the successful generation of .js and CSS files.
+  li Preview Pages - After generating the pages, preview them to confirm that the UT data has been accurately represented.
+
+// ... (Remaining code)
+
+
+h2 Steps to Generate Report with UT data
+p To generate a Planys Assessment Dashboard Report with UT data using PRIDE-5.0, structure your data as shown below:
+
+h4 Steps to Fill Automation_Template.Xlsx
+ul
+  li Landing_Page:
+    ul
+      li Title (Column A): Enter the actual title of the project.
+      li Start_date (Column B): Fill up this field with the project's actual start date.
+      li End_date (Column B): Fill up this field with the project's actual end date.
+      li Location (Column D): Specify the project location in this column
+      li Image_file_name (Column E): Provide the image file name in this column.
+      li Report_file_name (Column F): Insert the report file name in this column.
+      li How_to_file_name (Column G): Fill in this column with the how-to file name.
+  li Section_page
+    ul
+      li No_of_sections (Column A): Enter the number of sections in this column.
+      li Section_name (Column B): Populate this field with the name of each section.
+      li Image_file_name (Column C): Specify the image file name in this column.
+      li Block (Column D): Fill this column with the name of the block.
+  li d_Section_page
+    ul
+      li No_of_sections (Column A): Enter the number of sections in this column.
+      li Section_name (Column B): Populate this field with the name of each section.
+      li Image_file_name (Column C): Specify the image file name in this column.
+      li Block (Column D): Fill this column with the name of the block.
+  li inspection_map_page_1
+    ul
+      li Image_file_name (Column A): Provide the name of the inspection map image file in this column.
+      li Section_name (Column B): Populate this field with the name of each respective section.
+      li Block_name (Column C): Fill this column with the name of the block.
+      li No_of_rows (Column D): Enter the number of rows in this column.
+      li No_of_columns (Column E): Specify the number of columns in this column.
+      li Description (Column G): Populate this column with relevant descriptions.
+      li Color_of_marker (Column H): Indicate the color of the marker in this column.
+      li Video_ID (Column I): Input the video ID in this column.
+      li Marker_no (Column J): Enter the marker numbers in this column.
+
+h4 Steps to Fill UT_Automation_Template.Xlsx
+ul
+  li Defect_ID (Column A): A unique identifier for each reported defect within the system.
+  li Name (Column B): The designation of the defect or issue being reported.
+  li Location (Column C): The specific section or area within the system where the defect is detected.
+  li axis_name (Column D): The label identifying the axis associated with the defect.
+  li min_values (Column E): The lowest permissible values linked to the defect.
+  li max_values (Column F): The highest permissible values linked to the defect.
+  li resolution (Column G): The level of detail or precision pertaining to the defect.
+  li line_name (Column H): The label identifying the line associated with the defect.
+  li line_value (Column I): The value attributed to the defect on the specified line.
+  li line_color (Column J): The color representation of the defect on the line.
+  li Status_Start_coloum (Column K): The initial column for recording the status of the defect.
+  li Status_No_of_rows (Column L): The count of rows allocated for status-related information.
+  li Status_No_of_columns (Column M): The count of columns allocated for status-related information.
+  li Status_Name (Column N): The name indicating the status of the defect.
+  li Status_Value (Column O): The descriptive value corresponding to the status of the defect.
+  li No_Tables (Column P): The quantity of tables associated with the defect.
+  li Table_Name (Column Q): The name of the table pertaining to the defect.
+  li Colors (Column R): Colors used for representation or visualization of the defect.
+  li Legend (Column S): The key or legend explaining the colors and their respective meanings.
+  li Table_Start_coloum (Column T): The starting column for the defect-related table.
+  li Table_No_of_rows (Column U): The number of rows in the table relevant to the defect.
+  li Table_No_of_columns (Column V): The number of columns in the table relevant to the defect.
+  li Reading_1 (Column W): Placeholder for specific readings or data associated with the defect.
+
+h2 Steps to be Followed while Generating PAD in PRIDE 5.0
+ol
+  li Choose File - Start by choosing the file named "Resource.zip."
+  li Upload - Upload the selected file into PRIDE 5.0.
+  li Clear CSV - After a successful upload, clear the CSV data to remove any unwanted CSV files from the resource.
+  li Convert Excel to CSV file - Once the CSV data is cleared, convert Excel files to CSV format.
+  li Export Support files - After converting excel files, Export necessary support files.
+  li Add UT - After exporting necessary support files, Add UT.
+  li Generate JSON - After exporting the files, generate a JSON file.
+  li Validate CSV Data - After JSON is completed, Validate the CSV data and resize images if needed.
+  li Generate.js and CSS - Validate the CSV data, then create the "Generate.js" and CSS files after completing the generation process.
+  li Generate Page - Create a landing page and a main page following the successful generation of .js and CSS files.
+  li Preview Pages - After generating the pages, preview them to confirm that the UT data has been accurately represented.
+
+// ... (Remaining code)
+// ... (Previous code)
+
+h2 Steps to Generate Report with Bathy and UT data
+p To generate a Planys Assessment Dashboard Report with Bathy and UT data using PRIDE-5.0, structure your data as shown below:
+
+h4 Steps to Fill Automation_Template.Xlsx
+ul
+  li Landing_Page:
+    ul
+      li Title (Column A): Enter the actual title of the project.
+      li Start_date (Column B): Fill up this field with the project's actual start date.
+      li End_date (Column B): Fill up this field with the project's actual end date.
+      li Location (Column D): Specify the project location in this column
+      li Image_file_name (Column E): Provide the image file name in this column.
+      li Report_file_name (Column F): Insert the report file name in this column.
+      li How_to_file_name (Column G): Fill in this column with the how-to file name.
+  li Section_page
+    ul
+      li No_of_sections (Column A): Enter the number of sections in this column.
+      li Section_name (Column B): Populate this field with the name of each section.
+      li Image_file_name (Column C): Specify the image file name in this column.
+      li Block (Column D): Fill this column with the name of the block.
+  li d_Section_page
+    ul
+      li No_of_sections (Column A): Enter the number of sections in this column.
+      li Section_name (Column B): Populate this field with the name of each section.
+      li Image_file_name (Column C): Specify the image file name in this column.
+      li Block (Column D): Fill this column with the name of the block.
+  li inspection_map_page_1
+    ul
+      li Image_file_name (Column A): Provide the name of the inspection map image file in this column.
+      li Section_name (Column B): Populate this field with the name of each respective section.
+      li Block_name (Column C): Fill this column with the name of the block.
+      li No_of_rows (Column D): Enter the number of rows in this column.
+      li No_of_columns (Column E): Specify the number of columns in this column.
+      li Description (Column G): Populate this column with relevant descriptions.
+      li Color_of_marker (Column H): Indicate the color of the marker in this column.
+      li Video_ID (Column I): Input the video ID in this column.
+      li Marker_no (Column J): Enter the marker numbers in this column.
+  li Conclusions
+    ul
+      li Descriptions (Column A): Fill this column with concise descriptions.
+
+h4 Bathymetry
+ul
+  li no_of_xyz_files (Column A): Enter the number of files in this column.
+  li Pier_name (Column B): Specify the corresponding pier name in this column.
+  li Image_file_name (Column C): Provide the corresponding image file name in this column.
+  li js_file_name (Column D): Enter the corresponding JS file name in this column.
+  li Description (Column E): Add a description of the report in this column.
+
+h4 Common Path
+ul
+  li Common_Folder_Path (Column A): Fill this column with https://dashboard.planystech.com/temporary/Common/.
+
+h4 Steps to Fill Bathymetry
+ul
+  li Place 2D.js and 3D.js Files (Step 2.1): Place the 2d.js and 3d.js files in this location.
+  li Place Bathymetry Image File (Step 2.2): In the Contours folder, place the bathymetry image file.
+
+h4 Steps to Fill UT_Automation_Template.Xlsx
+ul
+  // ... (Previous code)
+
+h4 Steps to be Followed while Generating PAD in PRIDE 5.0
+ol
+  li Choose File - Start by choosing the file named "Resource.zip."
+  li Upload - Upload the selected file into PRIDE 5.0.
+  li Clear CSV - After a successful upload, clear the CSV data to remove any unwanted CSV files from the resource.
+  li Convert Excel to CSV file - Once the CSV data is cleared, convert Excel files to CSV format.
+  li Export Support files - After converting excel files, Export necessary support files.
+  li Add UT - After exporting necessary support files, Add UT.
+  li Generate JSON - After exporting the files, generate a JSON file.
+  li Validate CSV Data - After JSON is completed, Validate the CSV data and resize images if needed.
+  li Generate.js and CSS - Validate the CSV data, then create the "Generate.js" and CSS files after completing the generation process.
+  li Generate Bathymetry - After Generating .js and CSS file, Generate Bathymetry.
+  li Generate Page - Create a landing page and a main page following the successful generation of Bathymetry.
+  li Preview Pages - After generating the pages, preview them to confirm that the bathymetry charts have been generated accurately.
+
+// ... (Remaining code)
+// ... (Previous code)
+
+h4 Bathy + UT + PDF
+p To generate a Planys Assessment Dashboard Report with Bathy, UT, and PDF using PRIDE-5.0, structure your data as shown below:
+
+h4 Steps to Fill Automation_Template.Xlsx
+ul
+  li Landing_Page:
+    ul
+      // ... (Previous code)
+  li bathymetry
+    ul
+      li no_of_xyz_files (Column A): Enter the number of files in this column.
+      li Pier_name (Column B): Specify the corresponding pier name in this column.
+      li Image_file_name (Column C): Provide the corresponding image file name in this column.
+      li js_file_name (Column D): Enter the corresponding JS file name in this column.
+      li Description (Column E): Add a description of the report in this column.
+  li common_path
+    ul
+      li Common_Folder_Path (Column A): Fill this column with https://dashboard.planystech.com/temporary/Common/.
+  li Steps to Fill Bathymetry
+    ul
+      li Place 2D.js and 3D.js Files (Step 2.1): Place the 2d.js and 3d.js files in this location.
+      li Place Bathymetry Image File (Step 2.2): In the Contours folder, place the bathymetry image file.
+  li Dropdown
+    ul
+      li No_of_files (Column A): Indicate the quantity of files associated with this entry.
+      li Title (Column B): Provide a title or heading for the files linked to this entry.
+      li File_type (Column C): Specify the file type (e.g., inspection_pdf, defect_pdf) linked with this entry.
+      li File_name (Column D): Enter the file name or identifier for the connected file(s).
+  li inspection_pdf
+    ul
+      li section_name (Column A): Input the section name relevant to the inspection PDF.
+      li no_of_sub_section (Column B): Input the number of subsections within the chosen section.
+      li sub_section_name (Column C): Input the sub-section name within the specified section.
+      li Title (Column D): Provide a title or heading for the content linked to this sub-section.
+      li file_name (Column E): Enter the file name or identifier for the connected content in this sub-section.
+  li defect_pdf
+    ul
+      li section_name (Column A): Input the section name associated with the defect PDF.
+      li no_of_sub_section (Column B): Input the number of subsections within the selected section.
+      li sub_section_name (Column C): Input the sub-section name within the designated section.
+      li Title (Column D): Provide a title or heading for the content related to this sub-section.
+      li file_name (Column E): Enter the file name or identifier for the linked content in this sub-section.
+
+h4 Steps to Fill UT_Automation_Template.Xlsx
+ul
+  // ... (Previous code)
+
+h4 Steps to be Followed while Generating PAD in PRIDE 5.0
+ol
+  li Choose File - Start by choosing the file named "Resource.zip."
+  li Upload - Upload the selected file into PRIDE 5.0.
+  li Clear CSV - After a successful upload, clear the CSV data to remove any unwanted CSV files from the resource.
+  li Convert Excel to CSV file - Once the CSV data is cleared, convert Excel files to CSV format.
+  li Export Support files - After converting excel files, Export necessary support files.
+  li Add UT - After exporting necessary support files, Add UT.
+  li Generate JSON - After exporting the files, generate a JSON file.
+  li Validate CSV Data - After JSON is completed, Validate the CSV data and resize images if needed.
+  li Generate.js and CSS - Validate the CSV data, then create the "Generate.js" and CSS files after completing the generation process.
+  li Generate Bathymetry - After Generating .js and CSS file, Generate Bathymetry.
+  li Generate Page - Create a landing page and a main page following the successful generation of Bathymetry.
+  li Preview Pages - After generating the pages, preview them to confirm that the bathymetry charts have been generated accurately.
+
+// ... (Remaining code)
+// ... (Previous code)
+
+h4 UT + PDF
+p To generate a Planys Assessment Dashboard Report with UT and PDF using PRIDE-5.0, structure your data as shown below:
+
+h4 Steps to Fill Automation_Template.Xlsx
+ul
+  li Landing_Page:
+    ul
+      // ... (Previous code)
+  li Conclusions
+    ul
+      li Descriptions (Column A): Fill this column with concise descriptions.
+  li Dropdown
+    ul
+      li No_of_files (Column A): Indicate the quantity of files associated with this entry.
+      li Title (Column B): Provide a title or heading for the files linked to this entry.
+      li File_type (Column C): Specify the file type (e.g., inspection_pdf, defect_pdf) linked with this entry.
+      li File_name (Column D): Enter the file name or identifier for the connected file(s).
+  li inspection_pdf
+    ul
+      li section_name (Column A): Input the section name relevant to the inspection PDF.
+      li no_of_sub_section (Column B): Input the number of subsections within the chosen section.
+      li sub_section_name (Column C): Input the sub-section name within the specified section.
+      li Title (Column D): Provide a title or heading for the content linked to this sub-section.
+      li file_name (Column E): Enter the file name or identifier for the connected content in this sub-section.
+  li defect_pdf
+    ul
+      li section_name (Column A): Input the section name associated with the defect PDF.
+      li no_of_sub_section (Column B): Input the number of subsections within the selected section.
+      li sub_section_name (Column C): Input the sub-section name within the designated section.
+      li Title (Column D): Provide a title or heading for the content related to this sub-section.
+      li file_name (Column E): Enter the file name or identifier for the linked content in this sub-section.
+  li common_path
+    ul
+      li Common_Folder_Path (Column A): Fill this column with https://dashboard.planystech.com/temporary/Common/.
+
+h4 Steps to Fill UT_Automation_Template.Xlsx
+ul
+  // ... (Previous code)
+
+h4 Steps to be Followed while Generating PAD in PRIDE 5.0
+ol
+  // ... (Previous code)
+  li Step 10: Generate Page - Create a landing page and a main page following the successful generation of Bathymetry and UT.
+  li Step 11: Preview Pages - After generating the pages, preview them to confirm that the charts and reports have been generated accurately.
+
+// ... (Remaining code)
+// ... (Previous code)
+
+h4 Bathy + UT + PDF + Visual
+p To generate a Planys Assessment Dashboard Report with Bathymetry, UT, PDF, and Visual using PRIDE-5.0, structure your data as shown below:
+
+h4 Steps to Fill Automation_Template.Xlsx
+ul
+  li Landing_Page:
+    ul
+      // ... (Previous code)
+  li Conclusions
+    ul
+      li Descriptions (Column A): Fill this column with concise descriptions.
+  li bathymetry
+    ul
+      li no_of_xyz_files (Column A): Enter the number of files in this column.
+      li Pier_name (Column B): Specify the corresponding pier name in this column.
+      li Image_file_name (Column C): Provide the corresponding image file name in this column.
+      li js_file_name (Column D): Enter the corresponding JS file name in this column.
+      li Description (Column E): Add a description of the report in this column.
+  li Dropdown
+    ul
+      // ... (Previous code)
+  li inspection_pdf
+    ul
+      // ... (Previous code)
+  li defect_pdf
+    ul
+      // ... (Previous code)
+  li common_path
+    ul
+      li Common_Folder_Path (Column A): Fill this column with https://dashboard.planystech.com/temporary/Common/.
+
+h4 Steps to Fill UT_Automation_Template.Xlsx
+ul
+  // ... (Previous code)
+
+h4 Steps to be Followed while Generating PAD in PRIDE 5.0
+ol
+  // ... (Previous code)
+  li Step 11: Generate Visuals - Incorporate visual elements into the report.
+  li Step 12: Generate Page - Create a landing page and a main page following the successful generation of Bathymetry, UT, PDF, and Visuals.
+  li Step 13: Preview Pages - After generating the pages, preview them to confirm that all elements have been accurately incorporated into the report.
+
+// ... (Remaining code)

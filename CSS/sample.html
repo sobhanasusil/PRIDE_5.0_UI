@@ -40,6 +40,21 @@
   <p>The .input-group-btn class attaches a button next to an input field. This is often used as a search bar:</p>
 </div>
 
+
+<script>
+ 
+ function print(n) {
+  if (n == 0 || n == 1) {
+    return 1;
+  }
+
+  return n * print(n - 1);
+}
+
+// Call the print function with an argument (e.g., 5) and log the result
+console.log(print(5)); // Output: 120 (5 * 4 * 3 * 2 * 1)
+
+</script>
 </body>
 </html>
 

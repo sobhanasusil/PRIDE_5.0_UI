@@ -745,3 +745,50 @@ span.choose {
 img {
     width: 225px;
 }
+
+/* Add this CSS to your stylesheet */
+.profile.active .profile_dd {
+    display: block; 
+  }
+  
+ 
+  
+  /* Additional styling for the dropdown */
+  .profile_dd {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 10px;
+  }
+  
+  /* Style for list items in the dropdown */
+  .profile_ul li {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  /* Additional styling for active state of the dropdown items */
+  .profile_ul li.active {
+    background-color: #f0f0f0;
+  }
+  
+  #drpbox{
+    width: fit-content;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    flex-direction: column;
+  }
+
+  #spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
