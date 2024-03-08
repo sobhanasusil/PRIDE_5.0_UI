@@ -41,19 +41,32 @@ html(lang="en")
     p The requirements.txt file contains the necessary libraries to be installed to run this tool. The following command can be used for installation:
       code $ pip install -r requirements.txt
 
-    h2 Bathymetry File Generation
-    p You have a primary directory with two main subdirectories: "Input" and "Output." Within the "Input" directory, establish two additional subdirectories at the same hierarchical level as "bathymetry_automation" (assuming "bathymetry_automation" is either a folder or file within the "Input" directory). These two subdirectories are named:
-    ul
-      li Resources
-      li Output
-    p Inside the "Resources" folder, include the following:
-    ul
-      li A file titled "Automation_template.xlsx" containing a sheet named "bathymetry."
-      li A subfolder named "Bathymetry."
-    p Inside the "Bathymetry" subfolder, create another subfolder named "xyz_files."
-    p Inside the "xyz_files" subfolder, place ".xyz" files.
+    h2 Bathymetry Fi    h1 Bathymetry Automation Tool Documentation
 
-    h3 Steps to Fill Automation_Template.Xlsx
+    h2 Repository Details
+    table
+      thead
+        tr
+          th S.No.
+          th File/Folder
+          th Description
+      tbody
+        tr
+          td 1
+          td Resources
+          td This folder stores templates for the 2D and 3D plotly js files; These are used to generate the actual plotly 2D and 3D files while running the Bathymetry tool.
+        tr
+          td 2
+          td Utilities
+          td This folder contains the utility functions written in Python, to generate the js files.
+        tr
+          td 3
+          td main.py
+          td This is the main Python file that performs the following steps: i) check if all the .xyz files are present in the correct location, ii) read and filter the .xyz files, iii) write the points to the 2D and 3D plotly js files.
+        tr
+          td 4
+          td requirements.txt
+          td This texAutomation_Template.Xlsx
     ul
       li no_of_xyz_files (Column A): Enter the number of files in this column.
       li Pier_name (Column B): Specify the corresponding pier name in this column.

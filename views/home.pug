@@ -21,30 +21,23 @@ head
   meta(charset='UTF-8')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   title Wizod modul SRG Generator
-  block css
-      link(rel='stylesheet', href='CSS/pugcss.css')
-
+  //- block css
+  //-   link(href='public/assets/style/font-awesome.min.css'  )
+  //-   link(href='public/assets/style/bootstrap5.3.0.min.css')
+    link(href='public/assets/style/font-awesome.min.css')
   link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
   link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css')
   link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
-  
   link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@5.15.3/css/all.min.css")
   link(rel="stylesheet" href='https://cdn.jsdelivr.net/npm/font-awesome/5.15.3/css/fontawesome.min.css')
   link(rel='stylesheet', href='https://unpkg.com/ionicons@5.5.3/dist/css/ionicons.min.css')
- 
   link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
- 
+  //- link(rel='stylesheet', href='')
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js')
   //- script(src='assets/script/bootstrap-min.js')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
-
-    //- include ../assets/style/bootstrap.3.4.min.css
-    //- include ../assets/style/bootstrap5.3.0.min.css
-    //- include ../assets/style/font-awesome.min.css
-    //- include ../assets/script/bootstrap.min.js
-    //- include ../assets/script/jquery.min.js
-    
+  style(type='text/css')
     include ../CSS/pugcss.css
     include ../CSS/sucess.css
    
@@ -99,15 +92,6 @@ body
             span.msg
             button.button.button-primary.animated-button#showNavButton(onclick="handleSelection()")
               span.animate-text Click Me   
-    //- .footer-container#help
-    //-   a(href='https://planystech.com/services/', class='buttons', tooltip='Service')
-    //-     <i class="fas fa-file-alt fa-sm"></i>
-    //-   a(href='https://planystech.com/technology/', class='buttons', tooltip='Technologies')
-    //-     <i class="fas fa-file fa-sm"></i>
-    //-   a(href='https://planystech.com/blog/', class='buttons', tooltip='Blog')
-    //-     <i class="fa fa-info-circle fa-xs"></i>
-    //-   a(href='#', class='buttons')
-    //-     <i class="fa fa-plus"></i>
     .container-fluid#navbar-container(style='display: none;')    
           h2#heading SRG Generetor
           form#msform
@@ -131,8 +115,7 @@ body
                       h2.steps Step 1 - 4
                   .card-container.card-body
                     .card(style="--clr: #009688")
-                      .img-box
-                        //- img(src="https://cdn4.vectorstock.com/i/1000x1000/59/08/upload-document-glyph-color-icon-vector-28415908.jpg")
+                      .img-box                       
                         img(src="../image/GenerateLandingPage_1.svg")
                       .content
                         h2 Choose file
@@ -160,8 +143,7 @@ body
                           | Click to clear CSV
                         input(type='button', name='clear', class='clear action-button', value='clear')
                         p#clear-files(style='display: none;')  
-                         | <i class="fa fa-check fa-lg"></i>Sucessfully Cleared CSV files
-                  //input(type='password', name='cpwd', placeholder='Confirm Password')
+                         | <i class="fa fa-check fa-lg"></i>Sucessfully Cleared CSV files                  
                 input(type='button', name='next', class='next nxt-button', value='Next')
                 //- Fieldsets for step -2
               fieldset
@@ -430,7 +412,7 @@ body
 
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js')
     script(src='https://code.jquery.com/jquery-3.6.0.min.js')
-    script(src='path/to/jquery.easing.min.js')
+    
     script
       include ../script/script.js
       include ../script/drpdwn.js

@@ -1,0 +1,34 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title= title
+        block css
+            link(rel="stylesheet" href="CSS/dashboard.css")
+            //- link(rel="stylesheet" href="Common/js/notiflix/dist/Minified/notiflix-2.1.3.min.css")
+            link(href='https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500&display=swap' rel='stylesheet')
+            link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+            link(rel="stylesheet" href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+            link(rel="stylesheet" href="CSS/main.css")
+            link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    body
+        nav            
+            .profile
+                span.user-photo.btn
+                    i.fa.fa-user#user_icon
+                span.first-name.right#userName(style="width: 10vw;") XXX
+
+        main        
+            .profile-container
+                a.right 
+                span.user-photo.left
+                h1.user-name
+                a#employeeId(style="padding-left") XXX
+                span.user-email#department XXX
+                span.user-email#designation XXX
+                span.user-email#userEmail XXX@planystech.com
+                hr
+                button.button.secondary-button.left(style="padding:10px;") Switch User
+                button.button.primary-button.right#signOut(style="padding:10px;") Sign Out
+

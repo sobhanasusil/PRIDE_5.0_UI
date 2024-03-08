@@ -17,6 +17,7 @@ app.set('view engine', 'pug');
 // Compile the Pug templates
 const compiledFunction = pug.compileFile('./views/home.pug');
 const compiledDoc = pug.compileFile('./views/Doc.pug');
+const compiledDashboard = pug.compileFile('./views/dashboard.pug');
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
@@ -26,6 +27,13 @@ app.get('/', (req, res) => {
   const html = compiledFunction({ title: 'My Pug Template', profileData: profileData });
   res.send(html);
 });
+
+
+app.get('/dashboard', (req, res) => {
+  const html = compiledDashboard({ title: 'Dashboard'});
+  res.send(html);
+});
+
 
 // Render the documentation template
 app.get('/Doc', (req, res) => {
